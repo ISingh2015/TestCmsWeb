@@ -1,0 +1,16 @@
+<div class="container" style="margin-top: 5%">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <div>
+        <input #videoInput type="file" ng2FileSelect [uploader]="uploader"/>
+
+        <div class="drop-box" ng2FileDrop [ngClass]="{'dragover': isDropOver}" [uploader]="uploader"
+             (fileOver)="fileOverAnother($event)" (click)="fileClicked()">
+
+          <span class="drag-in-title">Import or drag Video file here</span>
+          <span class="drag-over-title">Drop the file</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" *ngIf="currentUser">
+  <div class="navbar-header">
+    <a class="btn btn-lg btn-success navbar-brand" routerLink="/">CMS Demo</a>
+  </div>
+  <div class="navbar-nav">
+    <a class="nav-item nav-link btn btn-lg btn-basic" routerLink="customer-list">Customers</a>
+    <a class="nav-item nav-link btn btn-lg btn-basic" routerLink="kv-list">Key-Values</a>
+    <a class="nav-item nav-link btn btn-lg btn-basic" routerLink="images-list">Images</a>
+    <a class="nav-item nav-link btn btn-lg btn-basic" routerLink="videos-list">Videos</a>
+    <a class="nav-item nav-link btn btn-lg btn-basic text-right" (click)="logout()">Logout</a>
+  </div>
+
+</nav>
+
+<alert></alert>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+

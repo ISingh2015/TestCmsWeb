@@ -1,0 +1,34 @@
+{
+  "/customer/getForUser/**": {
+    "target": "http://localhost:8402",
+    "secure": false
+  },
+  "/keyValue/getForUser/**": {
+    "target": "http://localhost:8402",
+    "secure": false
+  },
+  "/keyValue/create": {
+    "target": "http://localhost:8402",
+    "secure": false
+  },
+  "/keyValue/edit": {
+    "target": "http://localhost:8402",
+    "secure": false
+  },
+  "/keyValue/delete": {
+    "target": "http://localhost:8402",
+    "secure": false
+  },
+  "/demo-video/create": {
+    "target": "http://localhost:8402",
+    "secure": false
+  },
+  "/demo-image/getForUser/**": {
+    "target": "http://localhost:8402",
+    "secure": false
+  },
+  "/demo-image/create": {
+    "target": "http://localhost:8402",
+    "secure": false
+  }
+}

@@ -1,0 +1,36 @@
+<div class="card" style="margin-top: 3%;" *ngIf="currentUser">
+  <div class="card-header">
+    <h2>New Key-Value</h2>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="form-group">
+            <h5>Key Name</h5>
+            <input type="text" class="form-control" id="keyName" required [(ngModel)]="keyValues.keyName" name="keyName">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col col-md-6">
+          <div class="form-group">
+            <h5>Key Value</h5>
+            <ckeditor [(ngModel)]="keyValues.keyValue"
+                      #myckeditor="ngModel"
+                      name="myckeditor"
+                      required
+                      [config]="ckeConfig"
+                      debounce="500">
+            </ckeditor>
+              <!--<input type="text" class="form-control" id="keyValue" required [(ngModel)]="keyValue.keyValue"-->
+                   <!--name="keyValue">-->
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-sm btn-primary fa fa-floppy-o" placement="right" ngbTooltip="Update Key-Value"></button>
+      <button type="button" class="btn btn-sm btn-primary fa fa-close" [routerLink]="['/kv-list']" placement="bottom-right" ngbTooltip="Cancel Edit"></button>
+    </form>
+
+  </div>
+</div>

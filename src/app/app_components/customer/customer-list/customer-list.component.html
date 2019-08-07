@@ -1,0 +1,48 @@
+<!--<div><app-customer-new></app-customer-new></div>-->
+<div class="card" style="margin-top: 3%;" *ngIf="currentUser">
+  <div class="card-header">
+    <h2>List Customers</h2>
+  </div>
+  <div class="card-body">
+    <div class="buton-row">
+      <button style="margin-bottom: 2%" type="button" class="btn btn-info fa fa-plus" placement="right" [routerLink]="['/customer-add']"
+              ngbTooltip="New Customer"></button>
+
+      <!--<button type="button" (click)="showDialog()" class="btn btn-danger fa fa-fast-forward" placement="right" ngbTooltip="FAQ"></button>-->
+    </div>
+    <table style="height: 100px; overflow-y: auto" class="table table-striped table-bordered table-lg">
+      <thead class="thead-dark">
+      <tr>
+        <th>{{customerTableHeader[0]}}</th>
+        <th>{{customerTableHeader[1]}}</th>
+        <th>{{customerTableHeader[2]}}</th>
+        <th>{{customerTableHeader[3]}}</th>
+        <th>{{customerTableHeader[4]}}</th>
+        <th>{{customerTableHeader[5]}}</th>
+        <th>{{customerTableHeader[6]}}</th>
+        <th>{{customerTableHeader[7]}}</th>
+        <th>{{customerTableHeader[8]}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customersList| async">
+        <td>
+          <button type="button" (click)="navigateToCustomerDetails(customer)" class="btn btn-info fa fa-edit"
+                  placement="top" ngbTooltip="Edit Customer"></button>
+          <button type="button" (click)="deleteCustomer(customer)" class="btn btn-danger fa fa-trash " placement="right"
+                  ngbTooltip="Delete Customer"></button>
+        </td>
+        <td>{{customer.firstName}}</td>
+        <td>{{customer.lastName}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.pinCode}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.mobileNo}}</td>
+        <td>{{customer.userName}}</td>
+        <td>{{customer.userRole}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--<app-confirm-dialog></app-confirm-dialog>-->

@@ -1,0 +1,46 @@
+<!--<div><app-customer-new></app-customer-new></div>-->
+<div class="card" style="margin-top: 3%;" *ngIf="currentUser">
+  <div class="card-header">
+    <h2>List Key-Values</h2>
+  </div>
+  <div class="card-body">
+    <div class="buton-row">
+      <button style="margin-bottom: 1%" type="button" class="btn btn-info fa fa-plus" placement="right"
+              [routerLink]="['/kv-add']" ngbTooltip="New Key-Value"></button>
+    </div>
+
+    <table class="table table-striped table-bordered table-lg">
+      <thead class="thead-dark">
+      <tr>
+        <th>{{keyValueTableHeader[0]}}</th>
+        <th>{{keyValueTableHeader[1]}}</th>
+        <th>{{keyValueTableHeader[2]}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let keyValues of keyValuesList| async">
+        <td>
+          <button type="button" (click)="navigateToKeyValueDetails(keyValues)" class="btn btn-info fa fa-edit"
+                  style="margin-right: 1%" placement="top" ngbTooltip="Edit Key-Value"></button>
+          <button type="button" (click)="deleteKeyValue(keyValues)" class="btn btn-danger fa fa-trash"
+                  placement="right" ngbTooltip="Delete Key-Value"></button>
+        </td>
+        <td>{{keyValues.keyName}}</td>
+        <td>
+          <ckeditor readonly [(ngModel)]="keyValues.keyValue"
+                    #keyValue="ngModel"
+                    name="keyValue"
+                    required
+                    [config]="ckeConfig"
+                    [readonly]="true"
+                    debounce="500">
+          </ckeditor>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--<button class="upButton" *ngIf="isShow" (click)="gotoTop()">👆</button>-->
+<go-top-button ></go-top-button>
