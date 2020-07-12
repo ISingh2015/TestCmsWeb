@@ -6,6 +6,7 @@ import {AlertService, AuthenticationService, UserService} from '../../app_servic
 
 @Component({templateUrl: 'register.component.html'})
 export class RegisterComponent implements OnInit {
+  title = 'Register';
   registerForm: FormGroup;
   loading = false;
   submitted = false;

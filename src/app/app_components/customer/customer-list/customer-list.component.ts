@@ -13,7 +13,7 @@ import {User} from '@app/app_models';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit, OnDestroy {
-
+  title = 'List Customer';
   private subscription: Subscription = new Subscription();
   private customersList: Observable<Customer[]>;
   currentUser: User;

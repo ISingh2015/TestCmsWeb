@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CustomerEditComponent implements OnInit {
   customer: Customer;
-
+  title='Edit Customer';
   constructor(
     private customerService: CustomerService,
     private router: Router,

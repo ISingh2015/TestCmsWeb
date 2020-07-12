@@ -26,4 +26,24 @@ describe('registerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('valid title', () => {
+    expect(component.title).toEqual('Register');
+  });
+
+  it('Inv-valid Form, when no values present or Empty form submitted', () => {
+    component.registerForm.controls['firstName'].setValue('');
+    component.registerForm.controls['lastName'].setValue('');
+    component.registerForm.controls['username'].setValue('');
+    component.registerForm.controls['password'].setValue('');            
+    expect(component.registerForm.valid).toBeFalsy();
+  });
+
+  it('Valid Form, when valid values present and form submitted', () => {
+    component.registerForm.controls['firstName'].setValue('Inderjit');
+    component.registerForm.controls['lastName'].setValue('Sanhotra');
+    component.registerForm.controls['username'].setValue('isingh');
+    component.registerForm.controls['password'].setValue('Password');            
+    expect(component.registerForm.valid).toBeTruthy();
+  });
 });

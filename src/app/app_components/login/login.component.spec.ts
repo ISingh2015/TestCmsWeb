@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LoginComponent } from './login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule, By } from '@angular/platform-browser';
 
 
 describe('loginComponent', () => {
@@ -12,7 +13,7 @@ describe('loginComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
-      imports: [ReactiveFormsModule, RouterModule, HttpClientModule, RouterModule.forRoot([])]
+      imports: [ReactiveFormsModule, BrowserModule, RouterModule, HttpClientModule, RouterModule.forRoot([])]
     })
     .compileComponents();
   }));
@@ -26,4 +27,35 @@ describe('loginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('valid title', () => {
+    expect(component.title).toEqual('Login');
+  });
+
+  it('Inv-valid Form, when no values present or Empty form submitted', () => {
+    component.loginForm.controls['username'].setValue('');
+    component.loginForm.controls['password'].setValue('');            
+    expect(component.loginForm.valid).toBeFalsy();
+  });
+
+  it('Valid Form, when valid values present and form submitted', () => {
+    component.loginForm.controls['username'].setValue('isingh');
+    component.loginForm.controls['password'].setValue('Password');            
+    expect(component.loginForm.valid).toBeTruthy();
+  });
+
+  it('check if Login form submits', () => {
+    component.onSubmit();
+    expect(component.submitted).toBeTruthy();
+  });
+  
+  el : HTMLElement;
+  it('Call Submit method', () => {
+    fixture.detectChanges();
+    spyOn(component,'onSubmit');
+    const el = fixture.debugElement.query(By.css('button')).nativeElement;
+    el.click();
+    expect(component.onSubmit).toHaveBeenCalledTimes(1);
+  });
+
 });

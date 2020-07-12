@@ -25,4 +25,9 @@ describe('CustomerEditComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('valid title', () => {
+    expect(component.title).toEqual('Edit Customer');
+  });
+
 });

@@ -35,7 +35,7 @@ export class ConfirmDialogService {
   }
 
   getMessage(): Observable<any> {
-    console.log ('Within get Message') ;
+    // console.log ('Within get Message') ;
     return this.subject.asObservable();
   }
 }

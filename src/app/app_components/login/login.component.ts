@@ -7,6 +7,7 @@ import {AlertService, AuthenticationService} from '../../app_services';
 
 @Component({templateUrl: 'login.component.html'})
 export class LoginComponent implements OnInit, OnDestroy {
+  title = 'Login'; 
   loginForm: FormGroup;
   loading = false;
   submitted = false;
