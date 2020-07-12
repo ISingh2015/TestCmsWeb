@@ -24,7 +24,7 @@ export class CustomerListComponent implements OnInit, OnDestroy {
     private customerService: CustomerService,
     private authenticationService: AuthenticationService,
     private router: Router) {
-    this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
+      this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
       this.currentUser = user;
     });
   }

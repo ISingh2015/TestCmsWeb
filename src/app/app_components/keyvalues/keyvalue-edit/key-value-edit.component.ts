@@ -49,7 +49,7 @@ export class KeyValueEditComponent implements OnInit, OnDestroy {
   }
 
   getKeyValueDetails(id: number) {
-    this.subscription= this.keyValueService.getKeyValueById(id).subscribe(data => {
+    this.subscription = this.keyValueService.getKeyValueById(id).subscribe(data => {
         this.keyValues = data;
       },
       error => {
@@ -59,7 +59,7 @@ export class KeyValueEditComponent implements OnInit, OnDestroy {
   }
 
   saveKeyValueDetails() {
-    this.subscription= this.keyValueService.updateKeyValue(this.keyValues)
+    this.subscription = this.keyValueService.updateKeyValue(this.keyValues)
       .subscribe(data => {
           this.router.navigate(['/kv-list']);
         },

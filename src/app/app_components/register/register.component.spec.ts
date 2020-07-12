@@ -1,27 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RegisterComponent } from './register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { CustomerListComponent } from './customer-list.component';
-import { User } from '@app/app_models';
 
 
-describe('CustomerListComponent', () => {
-  let component: CustomerListComponent;
-  let fixture: ComponentFixture<CustomerListComponent>;
+describe('registerComponent', () => {
+  let component: RegisterComponent;
+  let fixture: ComponentFixture<RegisterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomerListComponent ],
+      declarations: [ RegisterComponent ],
       imports: [ReactiveFormsModule, RouterModule, HttpClientModule, RouterModule.forRoot([])]      
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CustomerListComponent);
+    fixture = TestBed.createComponent(RegisterComponent);
     component = fixture.componentInstance;
-    component.currentUser = new User();
     fixture.detectChanges();
   });
 

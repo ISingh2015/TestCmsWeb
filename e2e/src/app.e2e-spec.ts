@@ -7,8 +7,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display CMS Demo', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to angular-registration-login-example!');
+    expect(page.getParagraphText()).toEqual('');
   });
 });

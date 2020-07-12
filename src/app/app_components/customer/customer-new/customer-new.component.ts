@@ -13,7 +13,7 @@ import {Subscription} from 'rxjs';
 })
 
 export class CustomerNewComponent implements OnInit {
-  title: string = 'New Customer';
+  title = 'New Customer';
   currentUser: User;
   currentUserSubscription: Subscription;
 
@@ -23,11 +23,10 @@ export class CustomerNewComponent implements OnInit {
   constructor(
     private customerService: CustomerService,
     private authenticationService: AuthenticationService,
-    private router: Router) {
+    private router : Router) {
     this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
       this.currentUser = user;
     });
-    this.newCustomer();
   }
 
   ngOnInit() {
