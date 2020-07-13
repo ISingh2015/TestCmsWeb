@@ -8,6 +8,11 @@ exports.config = {
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
+// Test E2E in chrome 
+// chromeOptions: {
+//   binary: process.env.CHROME_BIN,
+//   args: ['--headless', '--no-sandbox']
+//   }  
   capabilities: {
     'browserName': 'chrome'
   },

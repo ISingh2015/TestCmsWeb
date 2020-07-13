@@ -21,7 +21,7 @@ describe('AuthenticationService', () => {
   it('service should be created and have one user', () => {
     const service: AuthenticationService = TestBed.get(AuthenticationService);
     expect(service).toBeTruthy();
-    // expect(service.currentUser.pipe.length).toEqual(1);
+    // expect(service.currentUserValue).toContain('Inderjit');
   });
 
 });

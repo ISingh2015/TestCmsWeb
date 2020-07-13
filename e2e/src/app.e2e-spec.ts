@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { element, by } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -7,8 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display CMS Demo', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('');
-  });
+  // it('should navigate to Home page and display registered users', () => {
+  //   page.navigateTo();
+  //   expect(page.getWelcomeMessageText()).toEqual('Registered users ');
+  // });
+
 });
