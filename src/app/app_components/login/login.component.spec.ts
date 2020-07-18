@@ -49,7 +49,6 @@ describe('loginComponent', () => {
     expect(component.submitted).toBeTruthy();
   });
   
-  el : HTMLElement;
   it('Call Submit method', () => {
     fixture.detectChanges();
     spyOn(component,'onSubmit');
