@@ -41,7 +41,7 @@
     "../node_modules/font-awesome/css/font-awesome.css"
   ],
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.3",
+    "@angular-devkit/build-angular": "^15.0.4",
     "@angular/cli": "~7.0.3",
     "@angular/compiler-cli": "^7.2.6",
     "@angular/language-service": "~7.0.0",
